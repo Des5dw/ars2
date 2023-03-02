@@ -388,8 +388,28 @@ VisualsTab:AddToggle({
 })
 
 VisualsTab:AddSection({
-	Name = ""
+	Name = "Rainbow"
 })
+VisualsTab:AddToggle({
+	Name = "Rainbow Gun + entity",
+	Default = false,
+	Callback = function(State)
+ACQbuvyy = State
+while ACQbuvyy do
+	wait(0)
+ if Workspace.Camera:FindFirstChild("Arms") then
+  for i, v in pairs(Workspace.Camera.Arms:GetChildren()) do 
+if v.ClassName == "MeshPart" then
+	 v.Color = Color3.fromHSV(tick()%5/5,1,1) 
+
+                    end
+                end
+            end
+        end
+	end    
+})
+
+
 
 VisualsTab:AddToggle({
 	Name = "Rainbow Gun",
@@ -430,6 +450,8 @@ MiscTab:AddToggle({
 	Default = false,
 	Callback = function()end
 })
+
+
 
 MiscTab:AddSection({
 	Name = "Other"
