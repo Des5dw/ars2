@@ -546,12 +546,7 @@ end
 	end
 })
 
-MiscTab:AddToggle({
-	Name = "Autofarm Hearts",
-    Flag = "Hearts",
-	Default = false,
-	Callback = function()end
-})
+
 
 function TeamCheck(v)
     if v.Team ~= game.Players.LocalPlayer.Team or game.ReplicatedStorage.wkspc.FFA.Value then
@@ -695,17 +690,7 @@ game:GetService("RunService").Stepped:Connect(function()
     end
 end)
 
-coroutine.wrap(function()
-    while wait(0.5) do
-        if OrionLib.Flags["Hearts"].Value and game.Players.LocalPlayer.Character:FindFirstChild("Spawned") and game.Players.LocalPlayer.Character:FindFirstChild("IsAPlayer") and not game.ReplicatedStorage.wkspc.Status.RoundOver.Value and not game.ReplicatedStorage.wkspc.Status.Preparation.Value then
-            for _,v in pairs(workspace.Debris:GetChildren()) do 
-                if v.Name == "Heart" then
-                    game.Players.LocalPlayer.Character:PivotTo(v.CFrame)
-                end
-            end
-        end
-    end
-end)()
+
 
 coroutine.wrap(function()
 	while wait(0.2) do
